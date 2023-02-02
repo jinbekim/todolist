@@ -19,16 +19,16 @@
 	<key>STORAGE_BUCKET</key>
 	<string>todolist-986af.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:158756326159:ios:ab5bc2f14f59c33f150c7a</string>
+	<string>1:158756326159:ios:6a16f8f171b8a106150c7a</string>
 </dict>
 </plist>

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:todolist/firebase_options.dart';
 import 'package:todolist/injection.dart';
-import 'package:todolist/presentation/core/app_wiget.dart';
+import 'package:todolist/presentation/core/app_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

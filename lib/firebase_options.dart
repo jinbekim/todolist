@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBJ4IYPIZGf3Vi7_JJqe9i_U_8VGqP9LH0',
-    appId: '1:158756326159:android:18076d4cd4ac75e8150c7a',
+    appId: '1:158756326159:android:395a39248dc42a1f150c7a',
     messagingSenderId: '158756326159',
     projectId: 'todolist-986af',
     storageBucket: 'todolist-986af.appspot.com',
@@ -63,20 +63,22 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAFIvgsg_VUKPFqiw2P6JtIlNa8ht1c2bw',
-    appId: '1:158756326159:ios:ab5bc2f14f59c33f150c7a',
+    appId: '1:158756326159:ios:6a16f8f171b8a106150c7a',
     messagingSenderId: '158756326159',
     projectId: 'todolist-986af',
     storageBucket: 'todolist-986af.appspot.com',
+    androidClientId: '158756326159-oilqo9j4mnfu0ch6dsm71qvc6br8il4g.apps.googleusercontent.com',
     iosClientId: '158756326159-be4662e4f6rrq6n7e2j0cg8o6l6b6vkt.apps.googleusercontent.com',
     iosBundleId: 'com.example.todolist',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyAFIvgsg_VUKPFqiw2P6JtIlNa8ht1c2bw',
-    appId: '1:158756326159:ios:ab5bc2f14f59c33f150c7a',
+    appId: '1:158756326159:ios:6a16f8f171b8a106150c7a',
     messagingSenderId: '158756326159',
     projectId: 'todolist-986af',
     storageBucket: 'todolist-986af.appspot.com',
+    androidClientId: '158756326159-oilqo9j4mnfu0ch6dsm71qvc6br8il4g.apps.googleusercontent.com',
     iosClientId: '158756326159-be4662e4f6rrq6n7e2j0cg8o6l6b6vkt.apps.googleusercontent.com',
     iosBundleId: 'com.example.todolist',
   );
