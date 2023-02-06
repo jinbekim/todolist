@@ -22,5 +22,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   }) = Multiline<T>;
   const factory ValueFailure.listTooLong({
     required T failedValue,
+    required int max,
   }) = ListTooLong<T>;
 }
