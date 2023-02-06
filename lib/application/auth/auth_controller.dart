@@ -8,6 +8,8 @@ class AuthController extends GetxController {
 
   AuthController(this._authFacade);
 
+  static AuthController get to => Get.find();
+
   @override
   void onInit() {
     super.onInit();

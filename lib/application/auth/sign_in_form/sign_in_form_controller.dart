@@ -11,6 +11,8 @@ class SignInFormController extends GetxController {
 
   SignInFormController(this._authFacade);
 
+  static SignInFormController get to => Get.find();
+
   @override
   void onInit() {
     super.onInit();
