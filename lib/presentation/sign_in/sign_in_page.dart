@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todolist/application/auth/sign_in_for/bloc/sign_in_form_bloc.dart';
-import 'package:todolist/injection.dart';
 import 'package:todolist/presentation/sign_in/widgets/sign_in_form.dart';
 
 class SignInPage extends StatelessWidget {
@@ -11,10 +8,7 @@ class SignInPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sign In'),
       ),
-      body: BlocProvider(
-        create: (context) => getIt<SignInFormBloc>(),
-        child: const SignInForm(),
-      ),
+      body: SignInForm(),
     );
   }
 }
