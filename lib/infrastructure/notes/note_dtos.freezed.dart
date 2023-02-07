@@ -352,9 +352,10 @@ class __$$_TodoItemDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TodoItemDto implements _TodoItemDto {
+class _$_TodoItemDto extends _TodoItemDto {
   const _$_TodoItemDto(
-      {required this.id, required this.name, required this.done});
+      {required this.id, required this.name, required this.done})
+      : super._();
 
   factory _$_TodoItemDto.fromJson(Map<String, dynamic> json) =>
       _$$_TodoItemDtoFromJson(json);
@@ -397,19 +398,14 @@ class _$_TodoItemDto implements _TodoItemDto {
       this,
     );
   }
-
-  @override
-  TodoItem toDomain() {
-    // TODO: implement toDomain
-    throw UnimplementedError();
-  }
 }
 
-abstract class _TodoItemDto implements TodoItemDto {
+abstract class _TodoItemDto extends TodoItemDto {
   const factory _TodoItemDto(
       {required final String id,
       required final String name,
       required final bool done}) = _$_TodoItemDto;
+  const _TodoItemDto._() : super._();
 
   factory _TodoItemDto.fromJson(Map<String, dynamic> json) =
       _$_TodoItemDto.fromJson;

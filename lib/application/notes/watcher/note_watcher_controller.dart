@@ -8,7 +8,7 @@ import 'package:todolist/domain/notes/i_note_repository.dart';
 import 'package:todolist/domain/notes/note.dart';
 import 'package:todolist/domain/notes/note_failure.dart';
 
-class NoteWatcherController {
+class NoteWatcherController extends GetxController {
   final INoteRepository _noteRepository;
   final state = const NoteWatcherState.initial().obs;
 

@@ -74,6 +74,7 @@ abstract class TodoItemDto with _$TodoItemDto {
     required String name,
     required bool done,
   }) = _TodoItemDto;
+  const TodoItemDto._();
 
   factory TodoItemDto.fromDomain(TodoItem todoItem) {
     return TodoItemDto(

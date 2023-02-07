@@ -15,7 +15,7 @@ class AuthController extends GetxController {
     super.onInit();
     ever(state, (value) {
       if (value == const AuthState.authenticated()) {
-        print('Authenticated');
+        Get.offAllNamed('/note');
       } else if (value == const AuthState.unauthenticated()) {
         Get.offAllNamed('/sign-in');
       }

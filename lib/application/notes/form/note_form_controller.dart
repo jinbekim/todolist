@@ -9,7 +9,7 @@ import 'package:todolist/domain/notes/note_failure.dart';
 import 'package:todolist/domain/notes/value_objects.dart';
 import 'package:todolist/presentation/notes/note_form/misc/todo_item_presentation_classes.dart';
 
-class NoteFormController {
+class NoteFormController extends GetxController {
   final INoteRepository _noteRepository;
 
   final Rx<NoteFormState> state = NoteFormState.initial().obs;
@@ -18,7 +18,7 @@ class NoteFormController {
 
   static NoteFormController get to => Get.find();
 
-  void initialized(Option<Note> initialNoteOption) {
+  void init(Option<Note> initialNoteOption) {
     state.value = initialNoteOption.fold(
       () => state.value,
       (initialNote) => state.value.copyWith(

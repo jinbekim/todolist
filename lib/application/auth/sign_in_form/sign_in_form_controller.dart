@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
+import 'package:todolist/application/auth/auth_controller.dart';
 import 'package:todolist/application/auth/sign_in_form/sign_in_form_state.dart';
 import 'package:todolist/domain/auth/auth_failure.dart';
 import 'package:todolist/domain/auth/i_auth_facade.dart';
@@ -33,7 +34,9 @@ class SignInFormController extends GetxController {
               ),
             );
           },
-          (_) {},
+          (_) {
+            AuthController.to.authCheckRequested();
+          },
         ),
       ),
     );
