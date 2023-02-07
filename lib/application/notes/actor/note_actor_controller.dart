@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:todolist/application/notes/note_actor_state.dart';
+import 'package:todolist/application/notes/actor/note_actor_state.dart';
 import 'package:todolist/domain/notes/i_note_repository.dart';
 import 'package:todolist/domain/notes/note.dart';
 
