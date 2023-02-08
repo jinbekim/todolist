@@ -10,7 +10,8 @@ class BodyField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: TextFormField(
-        initialValue: NoteFormController.to.state.value.note.body.getOrCrash(),
+        initialValue: NoteFormController.to.state.value.note.body.value
+            .fold((l) => '', (r) => r),
         decoration: const InputDecoration(
           labelText: 'Note',
           counterText: '',
