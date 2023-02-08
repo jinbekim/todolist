@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:todolist/application/auth/auth_controller.dart';
 import 'package:todolist/presentation/notes/notes_overview/widgets/notes_overview_body_widget.dart';
 import 'package:todolist/presentation/notes/notes_overview/widgets/uncompleted_switch.dart';
+import 'package:todolist/presentation/routes/get_pages.dart';
 
 class NoteOverviewPage extends StatelessWidget {
   const NoteOverviewPage({super.key});
@@ -23,7 +25,7 @@ class NoteOverviewPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // TODO:
+          Get.toNamed(Routes.noteFormPage);
         },
         child: const Icon(Icons.add),
       ),

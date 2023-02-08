@@ -32,7 +32,5 @@ void configureInjection(String env) {
   Get.put<NoteActorController>(
     NoteActorController(Get.find<NoteRepository>()),
   );
-  Get.put<NoteFormController>(
-    NoteFormController(Get.find<NoteRepository>()),
-  );
+  Get.put<NoteFormController>(NoteFormController(Get.find<NoteRepository>()));
 }

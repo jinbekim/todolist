@@ -4,6 +4,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:todolist/application/notes/actor/note_actor_controller.dart';
 import 'package:todolist/domain/notes/note.dart';
 import 'package:todolist/domain/notes/todo_item.dart';
+import 'package:todolist/presentation/notes/note_form/note_form_page.dart';
 
 class NoteCard extends StatelessWidget {
   final Note note;
@@ -19,7 +20,7 @@ class NoteCard extends StatelessWidget {
       color: note.color.getOrCrash(),
       child: InkWell(
         onTap: () {
-          // Get.toNamed(Routes.noteFormPage, arguments: NoteFormPageArguments(editedNote: note));
+          Get.to(() => NoteFormPage(editedNote: note));
         },
         onLongPress: () {
           _showDeletionDialog(context);

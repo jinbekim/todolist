@@ -8,6 +8,7 @@ import 'package:todolist/domain/notes/note.dart';
 import 'package:todolist/domain/notes/note_failure.dart';
 import 'package:todolist/domain/notes/value_objects.dart';
 import 'package:todolist/presentation/notes/note_form/misc/todo_item_presentation_classes.dart';
+import 'package:todolist/presentation/routes/get_pages.dart';
 
 class NoteFormController extends GetxController {
   final INoteRepository _noteRepository;
@@ -18,9 +19,36 @@ class NoteFormController extends GetxController {
 
   static NoteFormController get to => Get.find();
 
+  @override
+  void onReady() {
+    super.onReady();
+    ever(
+      state,
+      (_) => state.value.saveFailureOrSuccessOption.fold(
+        () => {},
+        (either) => either.fold(
+          (failure) {
+            Get.snackbar(
+              "NoteForm",
+              failure.map(
+                unexpected: (_) => "Unexpected error occured",
+                insufficientPermission: (_) => "Insufficient permissions",
+                unableToUpdate: (_) => "Unable to update",
+              ),
+            );
+          },
+          (_) => Get.until(
+            (route) => route.settings.name == Routes.noteOverviewPage,
+          ),
+        ),
+      ),
+      condition: () => state.value.saveFailureOrSuccessOption.isSome(),
+    );
+  }
+
   void init(Option<Note> initialNoteOption) {
     state.value = initialNoteOption.fold(
-      () => state.value,
+      () => NoteFormState.initial(),
       (initialNote) => state.value.copyWith(
         note: initialNote,
         isEditing: true,

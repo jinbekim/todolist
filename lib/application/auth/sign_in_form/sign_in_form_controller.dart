@@ -15,8 +15,8 @@ class SignInFormController extends GetxController {
   static SignInFormController get to => Get.find();
 
   @override
-  void onInit() {
-    super.onInit();
+  void onReady() {
+    super.onReady();
     ever(
       state,
       (_) => state.value.authFailureOrSuccessOption.fold(
