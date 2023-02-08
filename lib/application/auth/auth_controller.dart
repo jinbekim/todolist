@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:todolist/application/auth/auth_state.dart';
 import 'package:todolist/domain/auth/i_auth_facade.dart';
 
+import 'package:todolist/presentation/routes/get_pages.dart';
+
 class AuthController extends GetxController {
   final IAuthFacade _authFacade;
   final state = const AuthState.initial().obs;
@@ -15,9 +17,9 @@ class AuthController extends GetxController {
     super.onInit();
     ever(state, (value) {
       if (value == const AuthState.authenticated()) {
-        Get.offAllNamed('/note');
+        Get.offAllNamed(Routes.noteOverviewPage);
       } else if (value == const AuthState.unauthenticated()) {
-        Get.offAllNamed('/sign-in');
+        Get.offAllNamed(Routes.signInPage);
       }
     });
   }

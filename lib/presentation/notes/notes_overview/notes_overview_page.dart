@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todolist/application/auth/auth_controller.dart';
 import 'package:todolist/presentation/notes/notes_overview/widgets/notes_overview_body_widget.dart';
+import 'package:todolist/presentation/notes/notes_overview/widgets/uncompleted_switch.dart';
 
 class NoteOverviewPage extends StatelessWidget {
   const NoteOverviewPage({super.key});
@@ -16,11 +17,8 @@ class NoteOverviewPage extends StatelessWidget {
             AuthController.to.signOut();
           },
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.indeterminate_check_box),
-            onPressed: () {},
-          ),
+        actions: const <Widget>[
+          UncompletedSwitch(),
         ],
       ),
       floatingActionButton: FloatingActionButton(

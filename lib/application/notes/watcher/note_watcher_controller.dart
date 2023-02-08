@@ -32,7 +32,7 @@ class NoteWatcherController extends GetxController {
     state.value = const NoteWatcherState.loadInProgress();
     await _noteStreamSubscription?.cancel();
     _noteStreamSubscription =
-        _noteRepository.watchAll().listen((failureOrNotes) {
+        _noteRepository.watchUncompleted().listen((failureOrNotes) {
       notesReceived(failureOrNotes);
     });
   }
