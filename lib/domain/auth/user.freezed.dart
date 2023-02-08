@@ -19,19 +19,19 @@ mixin _$TUser {
   UniqueId get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TUserCopyWith<TUser> get copyWith => throw _privateConstructorUsedError;
+  $TUserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TUserCopyWith<$Res> {
-  factory $TUserCopyWith(TUser value, $Res Function(TUser) then) =
-      _$TUserCopyWithImpl<$Res, TUser>;
+  factory $TUserCopyWith(User value, $Res Function(User) then) =
+      _$TUserCopyWithImpl<$Res, User>;
   @useResult
   $Res call({UniqueId id});
 }
 
 /// @nodoc
-class _$TUserCopyWithImpl<$Res, $Val extends TUser>
+class _$TUserCopyWithImpl<$Res, $Val extends User>
     implements $TUserCopyWith<$Res> {
   _$TUserCopyWithImpl(this._value, this._then);
 
@@ -114,7 +114,7 @@ class _$_TUser implements _TUser {
       __$$_TUserCopyWithImpl<_$_TUser>(this, _$identity);
 }
 
-abstract class _TUser implements TUser {
+abstract class _TUser implements User {
   const factory _TUser({required final UniqueId id}) = _$_TUser;
 
   @override

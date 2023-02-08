@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
+import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:todolist/domain/auth/auth_failure.dart';
@@ -21,7 +20,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   );
 
   @override
-  Future<Option<TUser>> getSignedInUser() async =>
+  Future<Option<User>> getSignedInUser() async =>
       optionOf(_firebaseAuth.currentUser?.toDomain());
 
   @override
@@ -84,7 +83,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       );
       await _firebaseAuth.signInWithCredential(authCredential);
       return right(unit);
-    } on PlatformException catch (_) {
+    } on FirebaseAuthException catch (_) {
       return left(const AuthFailure.serverError());
     }
   }

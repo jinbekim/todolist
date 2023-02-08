@@ -49,9 +49,6 @@ class NoteColor extends ValueObject<Color> {
     Color(0xFFFFFDE7),
     Color(0xFFFFF8E1),
     Color(0xFFFCF8E3),
-    Color(0xFFF3E5F5),
-    Color(0xFFECEFF1),
-    Color(0xFFCFD8DC),
   ];
 
   @override

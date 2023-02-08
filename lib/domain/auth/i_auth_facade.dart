@@ -4,7 +4,7 @@ import 'package:todolist/domain/auth/user.dart';
 import 'package:todolist/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<Option<TUser>> getSignedInUser();
+  Future<Option<User>> getSignedInUser();
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     required EmailAddress emailAddress,
     required Password password,
