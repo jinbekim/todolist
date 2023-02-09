@@ -1,10 +1,12 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:todolist/application/notes/actor/note_actor_controller.dart';
+import 'package:todolist/application/notes/form/note_form_controller.dart';
 import 'package:todolist/domain/notes/note.dart';
 import 'package:todolist/domain/notes/todo_item.dart';
-import 'package:todolist/presentation/notes/note_form/note_form_page.dart';
+import 'package:todolist/presentation/routes/get_pages.dart';
 
 class NoteCard extends StatelessWidget {
   final Note note;
@@ -20,7 +22,8 @@ class NoteCard extends StatelessWidget {
       color: note.color.getOrCrash(),
       child: InkWell(
         onTap: () {
-          Get.to(() => NoteFormPage(editedNote: note));
+          NoteFormController.to.init(optionOf(note));
+          Get.toNamed(Routes.noteFormPage);
         },
         onLongPress: () {
           _showDeletionDialog(context);

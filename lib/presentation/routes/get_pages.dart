@@ -20,7 +20,7 @@ extension GetPagesX on GetInterface {
       ),
       GetPage(
         name: Routes.noteFormPage,
-        page: () => NoteFormPage(editedNote: null),
+        page: () => const NoteFormPage(editedNote: null),
         fullscreenDialog: true,
       ),
     ];

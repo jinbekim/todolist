@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kt_dart/kt.dart';
@@ -9,13 +8,12 @@ import 'package:todolist/presentation/notes/note_form/misc/todo_item_presentatio
 import 'package:todolist/presentation/notes/note_form/widgets/add_todo_tile_widget.dart';
 import 'package:todolist/presentation/notes/note_form/widgets/body_field_widget.dart';
 import 'package:todolist/presentation/notes/note_form/widgets/color_field_widget.dart';
+import 'package:todolist/presentation/notes/note_form/widgets/todo_list_widget.dart';
 
 class NoteFormPage extends StatelessWidget {
   final Note? editedNote;
 
-  NoteFormPage({super.key, required this.editedNote}) {
-    NoteFormController.to.init(optionOf(editedNote));
-  }
+  const NoteFormPage({super.key, required this.editedNote});
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +106,7 @@ class NoteFormPageScaffold extends StatelessWidget {
                 children: const [
                   BodyField(),
                   ColorField(),
+                  TodoList(),
                   AddTodoTile(),
                 ],
               ),

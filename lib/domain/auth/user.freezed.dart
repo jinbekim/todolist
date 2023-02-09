@@ -15,25 +15,25 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$TUser {
+mixin _$User {
   UniqueId get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TUserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TUserCopyWith<$Res> {
-  factory $TUserCopyWith(User value, $Res Function(User) then) =
-      _$TUserCopyWithImpl<$Res, User>;
+abstract class $UserCopyWith<$Res> {
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+      _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call({UniqueId id});
 }
 
 /// @nodoc
-class _$TUserCopyWithImpl<$Res, $Val extends User>
-    implements $TUserCopyWith<$Res> {
-  _$TUserCopyWithImpl(this._value, this._then);
+class _$UserCopyWithImpl<$Res, $Val extends User>
+    implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -55,18 +55,18 @@ class _$TUserCopyWithImpl<$Res, $Val extends User>
 }
 
 /// @nodoc
-abstract class _$$_TUserCopyWith<$Res> implements $TUserCopyWith<$Res> {
-  factory _$$_TUserCopyWith(_$_TUser value, $Res Function(_$_TUser) then) =
-      __$$_TUserCopyWithImpl<$Res>;
+abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
+      __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({UniqueId id});
 }
 
 /// @nodoc
-class __$$_TUserCopyWithImpl<$Res> extends _$TUserCopyWithImpl<$Res, _$_TUser>
-    implements _$$_TUserCopyWith<$Res> {
-  __$$_TUserCopyWithImpl(_$_TUser _value, $Res Function(_$_TUser) _then)
+class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
+    implements _$$_UserCopyWith<$Res> {
+  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -74,7 +74,7 @@ class __$$_TUserCopyWithImpl<$Res> extends _$TUserCopyWithImpl<$Res, _$_TUser>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$_TUser(
+    return _then(_$_User(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -85,22 +85,22 @@ class __$$_TUserCopyWithImpl<$Res> extends _$TUserCopyWithImpl<$Res, _$_TUser>
 
 /// @nodoc
 
-class _$_TUser implements _TUser {
-  const _$_TUser({required this.id});
+class _$_User implements _User {
+  const _$_User({required this.id});
 
   @override
   final UniqueId id;
 
   @override
   String toString() {
-    return 'TUser(id: $id)';
+    return 'User(id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TUser &&
+            other is _$_User &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -110,17 +110,16 @@ class _$_TUser implements _TUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TUserCopyWith<_$_TUser> get copyWith =>
-      __$$_TUserCopyWithImpl<_$_TUser>(this, _$identity);
+  _$$_UserCopyWith<_$_User> get copyWith =>
+      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
 }
 
-abstract class _TUser implements User {
-  const factory _TUser({required final UniqueId id}) = _$_TUser;
+abstract class _User implements User {
+  const factory _User({required final UniqueId id}) = _$_User;
 
   @override
   UniqueId get id;
   @override
   @JsonKey(ignore: true)
-  _$$_TUserCopyWith<_$_TUser> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,7 @@
-import 'dart:ui';
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:todolist/application/notes/form/note_form_state.dart';
@@ -15,7 +17,9 @@ class NoteFormController extends GetxController {
 
   final Rx<NoteFormState> state = NoteFormState.initial().obs;
 
-  NoteFormController(this._noteRepository);
+  NoteFormController(this._noteRepository) {
+    _prevIsFull = state.value.note.todos.isFull;
+  }
 
   static NoteFormController get to => Get.find();
 
@@ -24,7 +28,7 @@ class NoteFormController extends GetxController {
     super.onReady();
     ever(
       state,
-      (_) => state.value.saveFailureOrSuccessOption.fold(
+      (e) => e.saveFailureOrSuccessOption.fold(
         () => {},
         (either) => either.fold(
           (failure) {
@@ -44,6 +48,53 @@ class NoteFormController extends GetxController {
       ),
       condition: () => state.value.saveFailureOrSuccessOption.isSome(),
     );
+    _when(
+      state,
+      (_) {
+        Get.snackbar(
+          "NoteForm",
+          "You can't have more than 3 todos",
+          mainButton: TextButton(
+            onPressed: () {},
+            child: const Text(
+              'BUY NOW',
+              style: TextStyle(color: Colors.yellow),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  bool _conditional(dynamic condition) {
+    if (condition == null) return true;
+    if (condition is bool) return condition;
+    if (condition is bool Function()) return condition();
+    return true;
+  }
+
+  bool? _prevIsFull;
+
+  Worker _when<T>(
+    RxInterface<T> listener,
+    WorkerCallback<T> callback, {
+    dynamic condition = true,
+    Function? onError,
+    void Function()? onDone,
+    bool? cancelOnError,
+  }) {
+    final StreamSubscription sub = listener.listen(
+      (event) {
+        if (_prevIsFull != state.value.note.todos.isFull) {
+          _prevIsFull = state.value.note.todos.isFull;
+          if (_conditional(condition)) callback(event);
+        }
+      },
+      onError: onError,
+      onDone: onDone,
+      cancelOnError: cancelOnError,
+    );
+    return Worker(sub.cancel, '[_when]');
   }
 
   void init(Option<Note> initialNoteOption) {

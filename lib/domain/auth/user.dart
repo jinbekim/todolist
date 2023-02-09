@@ -4,8 +4,8 @@ import 'package:todolist/domain/core/value_objects.dart';
 part 'user.freezed.dart';
 
 @freezed
-abstract class User with _$TUser {
+abstract class User with _$User {
   const factory User({
     required UniqueId id,
-  }) = _TUser;
+  }) = _User;
 }
