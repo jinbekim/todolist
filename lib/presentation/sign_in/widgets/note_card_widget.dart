@@ -22,6 +22,7 @@ class NoteCard extends StatelessWidget {
       color: note.color.getOrCrash(),
       child: InkWell(
         onTap: () {
+          //NOTE ;
           NoteFormController.to.init(optionOf(note));
           Get.toNamed(Routes.noteFormPage);
         },

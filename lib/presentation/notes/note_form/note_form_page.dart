@@ -79,7 +79,7 @@ class NoteFormPageScaffold extends StatelessWidget {
         title: NoteFormController.to.state.value.isEditing
             ? const Text('Edit a note')
             : const Text('Create a note'),
-        actions: [
+        actions: [ // 왜 actions지?
           IconButton(
             icon: const Icon(Icons.check),
             onPressed: () {

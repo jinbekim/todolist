@@ -24,7 +24,7 @@ class TodoList extends StatelessWidget {
             NoteFormController.to.todosChanged(context.formTodos);
           },
           itemBuilder: (context, itemAnimation, item, index) {
-            return Reorderable(
+            return Reorderable( //NOTE - event bubbling
               key: ValueKey(item.id),
               builder: (context, dragAnimation, inDrag) {
                 return ScaleTransition(

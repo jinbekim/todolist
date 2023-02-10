@@ -148,6 +148,8 @@ class NoteFormController extends GetxController {
       failureOrSuccess = state.value.isEditing
           ? await _noteRepository.update(state.value.note)
           : await _noteRepository.create(state.value.note);
+    } else {
+      failureOrSuccess = left(const NoteFailure.unableToUpdate());
     }
 
     state.value = state.value.copyWith(

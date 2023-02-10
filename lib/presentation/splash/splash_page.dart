@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:todolist/application/auth/auth_controller.dart';
 
 class SplashPage extends StatefulWidget {
@@ -11,7 +11,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Get.find<AuthController>().authCheckRequested();
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await AuthController.to.authCheckRequested();
+    });
   }
 
   @override
