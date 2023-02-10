@@ -63,6 +63,7 @@ class NoteFormController extends GetxController {
           ),
         );
       },
+      condition: () => state.value.note.todos.isFull,
     );
   }
 
